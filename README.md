@@ -24,7 +24,7 @@ Fork this repository and clone your newly created repository.
 ### Not Required
 
 * No form input is required or expected
-* No visual stylins is required or expected
+* No visual styling is required or expected
 ---
 ### Before Starting User Stories
 
