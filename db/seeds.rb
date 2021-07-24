@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+StudentCourse.destroy_all
 Student.destroy_all
+Course.destroy_all
 
 harry = Student.create!(name: 'Harry Potter', age: 14, house: 'Gryffindor')
 draco = Student.create!(name: 'Draco Malfoy', age: 14, house: 'Slytherin')
@@ -17,9 +19,8 @@ course1 = Course.create!(name: 'Charms')
 course2 = Course.create!(name: 'Potions')
 course3 = Course.create!(name: 'Herbology')
 
-
 StudentCourse.create!(course: course1, student: harry)
 StudentCourse.create!(course: course2, student: harry)
-# StudentCourses.create!(course: course3, student: draco)
-# StudentCourses.create!(course: course3, student: cedric)
-# StudentCourses.create!(course: course2, student: harry)
+StudentCourse.create!(course: course3, student: draco)
+StudentCourse.create!(course: course3, student: cedric)
+StudentCourse.create!(course: course2, student: harry)

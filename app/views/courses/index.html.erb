@@ -1,0 +1,7 @@
+<h1>All Courses</h1>
+
+<% @courses.each do |course| %>
+  <div id="course-<%= course.id %>">
+    <p><%= course.name %>: <%= course.students.length %></p>
+  </div>
+<% end %>
