@@ -1,7 +1,11 @@
 <h1>All Courses</h1>
 
-<% @courses.each do |course| %>
+<% @courses.sort_by_name.each do |course| %>
   <div id="course-<%= course.id %>">
     <p><%= course.name %>: <%= course.students.length %></p>
+    <% course.students.sort_by_name.each do |student| %>
+      <p>- <%= student.name %></p>
+    <% end %>
+    <br>
   </div>
 <% end %>
