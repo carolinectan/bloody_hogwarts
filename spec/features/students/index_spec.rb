@@ -46,4 +46,16 @@ RSpec.describe 'student index page' do
     expect(page).to have_content("Average Age: 14.5")
   end
 
+    it 'shows students in alphabetical order' do
+      harry = Student.create!(name: 'Harry Potter', age: 14, house: 'Gryffindor')
+      draco = Student.create!(name: 'Draco Malfoy', age: 14, house: 'Slytherin')
+      cedric = Student.create!(name: 'Cedric Diggory', age: 16, house: 'Hufflepuff')
+      cho = Student.create!(name: 'Cho Chang', age: 14, house: 'Ravenclaw')
+
+      visit '/students'
+
+      expect("Cedric Diggory").to appear_before("Cho Chang")
+      expect("Cho Chang").to appear_before("Draco Malfoy")
+      expect("Draco Malfoy").to appear_before("Harry Potter")
+    end
 end

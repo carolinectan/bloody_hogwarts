@@ -7,6 +7,10 @@ class Student < ApplicationRecord
   has_many :courses, through: :student_courses
 
   def self.average_age
-    self.average(:age).to_f
+    average(:age).to_f
+  end
+
+  def self.sort_by_name
+    order(:name)
   end
 end

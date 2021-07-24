@@ -1,6 +1,6 @@
 <h1>All Hogwarts Students</h1>
 
-<% @students.each do |student| %>
+<% @students.sort_by_name.each do |student| %>
   <div id="student-<%= student.id %>">
     <h3><%= student.name %></h3>
     <p>Age: <%= student.age %></p>
